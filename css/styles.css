@@ -18,6 +18,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     color: var(--dark-color);
+    background-color: #121212;
 }
 
 /* Header e navegação */
@@ -179,6 +180,309 @@ footer p {
     text-align: center;
     font-size: 0.9rem;
     opacity: 0.8;
+}
+
+/* Layout principal */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background-color: #000000;
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.logo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    padding: 0 12px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #b3b3b3;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    color: #ffffff;
+}
+
+.sidebar nav ul li a i {
+    font-size: 20px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #1a1a1a, #121212);
+    overflow-y: auto;
+}
+
+/* Top Bar */
+.top-bar {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.user-controls {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    padding: 2px 8px 2px 2px;
+    border-radius: 23px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+/* Content Section */
+.content {
+    padding: 24px 32px;
+}
+
+.content h2 {
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+/* Music Grid */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+.musica-card {
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.musica-card:hover {
+    background-color: #282828;
+}
+
+.musica-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.musica-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.musica-card p {
+    font-size: 14px;
+    color: #b3b3b3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Player */
+.player {
+    height: 90px;
+    background-color: #181818;
+    border-top: 1px solid #282828;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+}
+
+.now-playing {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.album-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+}
+
+.track-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.track-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artist-name {
+    font-size: 12px;
+    color: #b3b3b3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.control-buttons button {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.play-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time {
+    font-size: 12px;
+    color: #b3b3b3;
+    min-width: 40px;
+}
+
+.progress {
+    flex: 1;
+    height: 4px;
+    background-color: #4d4d4d;
+    border-radius: 2px;
+    position: relative;
+}
+
+.progress-filled {
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+.volume-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.volume-controls button {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+.volume-bar {
+    width: 100px;
+    height: 4px;
+    background-color: #4d4d4d;
+    border-radius: 2px;
+    position: relative;
+}
+
+.volume-filled {
+    position: absolute;
+    height: 100%;
+    width: 70%;
+    background-color: #ffffff;
+    border-radius: 2px;
 }
 
 /* Responsividade */
